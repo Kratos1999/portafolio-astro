@@ -1,0 +1,91 @@
+---
+import Header from '../components/Header.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Footer from '../components/Footer.astro';
+
+
+const imageUrl = "/src/assets/moises.jpeg";
+const title = "Moises Maestre - Ingeniero DevOps";
+const description = "Ingeniero DevOps con una sólida experiencia en implementación, automatización y optimización de pipelines de entrega continua y despliegue continuo. Apasionado por la colaboración entre equipos de desarrollo y operaciones para acelerar la entrega de software de alta calidad. Experiencia con herramientas como Docker, AWS, Azure Devops para orquestar y gestionar eficazmente infraestructuras en la nube.";
+const projects = [
+  {
+    title: 'Docker',
+    description: 'Contenerizacion de microservicios, manejo excelentes de buenas practicas para la construccion de imagenes con dockerFile.',
+	technology: 'docker',   
+  },
+  {
+    title: 'Pipeline CI/CD en Azure DevOps',
+    description: 'Implementación de pipelines CI/CD en en Azure DevOps.',
+    technology: 'azure',  
+  },
+  {
+    title: 'AWS',
+    description: 'Manejo de infraestructura en la nube, experiencia con servicios como: ecs,ec2,s3,bedrock,cloudformation entre otros.',
+    technology: 'aws',  
+  },
+  {
+    title: 'Automatizacion de tareas',
+    description: 'Automatizacion de tareas repetitivas con bash y python.',
+    technology: 'bash', 
+  },
+  {
+    title: 'Monitoreo con cloudwatch',
+    description: 'Monitoreo del estado de la infraestructura en la nube mediante tableros y alarmas.',
+    technology: 'cloudwatch',  
+  },
+  {
+    title: 'Liquibase',
+    description: 'Experiencia en el manejo y administracion de cambios en base de datos con herramienta liquibase.',
+    technology: 'liquibase',
+  },
+];
+---
+
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+	<title>{title}</title>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <Header />
+    
+    <main class="container mx-auto p-4 md:p-8" id="home">
+		<section id="acerca-de" class="text-center mt-16">
+			<h1 class="text-4xl font-bold text-blue-600">{title}</h1>
+			<div class="flex flex-col md:flex-row justify-center items-center mt-8">
+			  <!-- Imagen con descripción debajo -->
+			  <img
+				src={imageUrl}
+				alt="Moises Maestre"
+				class="w-48 h-48 rounded-full object-cover border-4 border-blue-600"
+			  />
+			  <div class="mt-4 md:mt-0 md:ml-8">
+				<p class="text-lg text-gray-700">{description}</p>
+			  </div>
+			</div>
+		  </section>
+
+		  <section class="mt-16" id="proyectos">
+			<h2 class="text-3xl font-semibold text-gray-800">Habilidades</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+			  <!-- Mapeamos los proyectos y usamos el componente ProjectCard para cada uno -->
+			  {projects.map((project) => (
+				<ProjectCard
+				  title={project.title}
+				  description={project.description}
+				  technology={project.technology}
+				/>
+			  ))}
+			</div>
+		  </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>
+

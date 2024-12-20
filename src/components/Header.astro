@@ -1,0 +1,50 @@
+---
+
+---
+
+<header class="bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg sticky top-0 z-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+    <!-- Ícono de Docker como Logo -->
+    <div class="flex items-center space-x-2 text-white text-3xl font-semibold hover:text-opacity-80 cursor-pointer transition duration-300">
+      <!-- Docker Icono en SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor">
+        <path fill-rule="evenodd" d="M5.64 7.125a4.875 4.875 0 1 1 6.893-6.893A8.039 8.039 0 0 0 12 2a8.025 8.025 0 0 0-6.157 2.548 4.875 4.875 0 0 1-.327 8.094zM12 14.25a5.25 5.25 0 0 0-5.25 5.25h10.5a5.25 5.25 0 0 0-5.25-5.25z" />
+      </svg>
+      <!-- Nombre debajo del icono -->
+      <span class="text-2xl">DevOps Engineer</span>
+    </div>
+
+    <!-- Menú de Navegación -->
+    <nav class="hidden md:flex space-x-8 text-white text-lg font-medium">
+      <a href="#home" class="hover:text-blue-200 transition duration-300">Inicio</a>
+      <a href="#proyectos" class="hover:text-blue-200 transition duration-300">Habilidades</a>
+      <a href="#acerca-de" class="hover:text-blue-200 transition duration-300">Acerca de mí</a>
+      <a href="https://wa.link/r13kem" target="_blank" class="hover:text-blue-200 transition duration-300">Contacto</a>
+    </nav>
+
+    <!-- Icono de menú (hamburguesa) para móviles -->
+    <div class="md:hidden text-white">
+      <button id="hamburger-btn" class="focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menú móvil -->
+  <div id="mobile-menu" class="md:hidden bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-4 space-y-4 hidden">
+    <a href="#home" class="block text-lg">Inicio</a>
+    <a href="#proyectos" class="block text-lg">Habilidades</a>
+    <a href="#acerca-de" class="block text-lg">Acerca de mí</a>
+    <a href="https://wa.link/r13kem" target="_blank" class="block text-lg">Contacto</a>
+  </div>
+
+  <script>
+    // Script para el botón de hamburguesa
+    document.getElementById("hamburger-btn").addEventListener("click", function () {
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+</header>

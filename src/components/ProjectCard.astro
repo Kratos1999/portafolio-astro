@@ -1,0 +1,22 @@
+---
+const { title, description, imageUrl, technology } = Astro.props;
+---
+
+<div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl">
+  <div class="flex items-center">
+    <!-- Icono de la tecnología -->
+    <div class="w-12 h-12 rounded-full flex items-center justify-center bg-gray-100 mr-4">
+      {technology === 'docker' && <i class="fab fa-docker text-blue-600 text-3xl"></i>}
+      {technology === 'aws' && <i class="fab fa-aws text-yellow-600 text-3xl"></i>}
+      {technology === 'azure' && <i class="fab fa-microsoft text-blue-500 text-3xl"></i>}
+      {technology === 'bash' && <i class="fas fa-terminal text-gray-600 text-3xl"></i>}
+      {technology === 'cloudwatch' && <i class="fas fa-cloud text-purple-600 text-3xl"></i>}
+      {technology === 'liquibase' && <i class="fas fa-database text-green-600 text-3xl"></i>} <!-- Icono de base de datos -->
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold text-gray-800">{title}</h3>
+      <p class="text-gray-600 mt-2">{description}</p>
+    </div>
+  </div>
+</div>
